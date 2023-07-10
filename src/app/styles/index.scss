@@ -167,10 +167,13 @@ main {
             flex-direction: column;
             text-align: center;
             padding-left: 83px;
+            width: 80%;
             
             h1{
                 font-size: 30px;
                 margin-bottom: 15px;
+                display: flex;
+                justify-content: center;
             }
             p{
                 font-size: 18px;
@@ -178,10 +181,14 @@ main {
                 width: 34rem;
                 margin-top: 0px;
                 position: relative;
-                right: 11rem;
+                right: 6rem;
+                z-index: -1;
+    
             }
             .principal__btn{
                 width: 100%;
+                position: relative;
+                left: 5rem;
             }
             .principal__footer{
                 display: flex;
@@ -196,7 +203,7 @@ main {
     }
     .ocultar__barra.barra{
         position: absolute;
-        background-color: #d5d5d5;
+        background-color: #dedede;
         border-radius: 5px;
         border: 1px solid black;
         width: 90%;
