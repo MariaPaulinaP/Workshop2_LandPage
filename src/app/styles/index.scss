@@ -99,8 +99,133 @@ main {
     }
 }
 
-// MARIA DE AQUI PARA ABAJO PONES TU CODIGO, BORRA ESTO ANTES DE HACER EL COMMIT
-// FELIZ DIA 😁
+@mixin ventanitas ($largoTarjeta, $anchoTarjeta, $rightTarjeta) {
+    width: $anchoTarjeta;
+    height: $largoTarjeta;
+    color: black;
+    border-radius: 15px;
+    background-color: #d5d5d5;
+    padding: 15px;
+    position: absolute;
+    right: $rightTarjeta;
+    top: 35px;
+    div{
+        margin-bottom: 5px;
+        cursor: pointer
+    }
+}
+.oculto{
+    display: none;
+}
+.oculto2{
+    display: none;
+}
+.oculto.mostrar {
+    @include ventanitas($largoTarjeta,$anchoTarjeta ,80% );
+    display: block;
+}
+.oculto2.mostrar2 {
+    @include ventanitas($largoTarjeta, 64px, 72%);
+    display: block;
+}
+
+@media (max-width:500px) {
+    body{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+    header{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        nav{
+            display: none;
+        };
+    }
+    .hamburguesa{
+        display: block;
+        position: absolute;
+        left: 87%;
+        top: 2%;
+    }
+    main{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        .mobile{
+            display: block;
+            width: -webkit-fill-available;
+        }
+        .imagen{
+            display: none;
+        }
+        .principal{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            padding-left: 83px;
+            
+            h1{
+                font-size: 30px;
+                margin-bottom: 15px;
+            }
+            p{
+                font-size: 18px;
+                margin-bottom: 40px;
+                width: 34rem;
+                margin-top: 0px;
+                position: relative;
+                right: 11rem;
+            }
+            .principal__btn{
+                width: 100%;
+            }
+            .principal__footer{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 68%;
+                left: 11px;
+                position: relative;
+            }
+
+        }
+    }
+    .ocultar__barra.barra{
+        position: absolute;
+        background-color: #d5d5d5;
+        border-radius: 5px;
+        border: 1px solid black;
+        width: 90%;
+        height: 100%;
+        left: 10%;
+        display: block;
+        img{
+            display: flex;
+            position: relative;
+            left: 90%;
+            top: 7px;
+        }
+        ul{
+            list-style: none;
+            font-size: 30px;
+        }
+        li{
+            margin-bottom: 10px;
+        }
+    }
+    .ocultar__barra{
+        display: none;
+    }
+}
+
+
+
+
+
 
 
 
