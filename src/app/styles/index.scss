@@ -3,14 +3,15 @@ $largoTarjeta: auto;
 $anchoTarjeta: 90px;
 $rightTarjeta: 73%;
 
-body{
+body {
     background-color: $colorPrincipal;
     padding: 0px;
     margin: 0px;
 }
-header{
+
+header {
     display: flex;
-    align-items:flex-start;
+    align-items: flex-start;
     justify-content: space-around;
 
     nav {
@@ -19,61 +20,82 @@ header{
         justify-content: space-between;
         padding-right: 115px;
         margin-bottom: 13px;
-        ul{
+
+        ul {
             display: flex;
             gap: 30px;
             list-style: none;
-    
-            li{
+
+            li {
                 cursor: pointer;
             }
-            
-            .Register{
-                border: 1px solid black;
-                border-radius: 14px;
-                padding: 10px 20px;
-                bottom: 10px;
-                position: relative;
-                height: 32%;
-            }
-            .Register:hover{
-                background-color: black;
-                color: white;
-            }
-            
+
+
         }
     }
-    
+
+    .header__lista {
+        display: flex;
+        gap: 20px;
+        margin-right: 45px;
+
+        li {
+            list-style: none;
+        }
+
+        .Register {
+            border: 1px solid black;
+            border-radius: 14px;
+            padding: 10px 20px;
+            bottom: 10px;
+            position: relative;
+            height: 32%;
+        }
+
+        .Register:hover {
+            background-color: black;
+            color: white;
+        }
+    }
+
 }
-.hamburguesa{
+
+.hamburguesa {
     display: none;
 }
-.ocultar__barra{
+
+.ocultar__barra {
     display: none;
 }
+
 main {
     display: flex;
     height: auto;
-    .mobile{
+
+    .mobile {
         display: none;
     }
-    .principal{
+
+    .principal {
         display: flex;
         flex-direction: column;
         width: 50%;
         padding-left: 10%;
-        h1{
+
+        h1 {
             font-size: 72px;
             margin-bottom: 40px;
             width: 100%;
         }
-        p{
+
+        p {
             font-size: 18px;
             margin-bottom: 40px;
             width: 100%;
             margin-top: 0px;
         }
-        .principal__btn{
+
+        .principal__btn {
             width: 20%;
             color: white;
             background-color: black;
@@ -82,17 +104,21 @@ main {
             margin-bottom: 40px;
             cursor: pointer;
         }
-        .principal__btn:hover{
+
+        .principal__btn:hover {
             background-color: $colorPrincipal;
             color: black;
         }
-        .principal__footer{
+
+        .principal__footer {
             margin-left: 10px;
         }
     }
-    .imagen{
+
+    .imagen {
         width: 50%;
-        .imagen__figura--principal{
+
+        .imagen__figura--principal {
             width: 100%;
             height: 460px;
         }
@@ -109,73 +135,148 @@ main {
     position: absolute;
     right: $rightTarjeta;
     top: 35px;
-    div{
+
+    div {
         margin-bottom: 5px;
         cursor: pointer
     }
 }
-.oculto{
+
+.oculto {
     display: none;
 }
-.oculto2{
+
+.oculto2 {
     display: none;
 }
+
 .oculto.mostrar {
-    @include ventanitas($largoTarjeta,$anchoTarjeta ,80% );
+    @include ventanitas($largoTarjeta, $anchoTarjeta , 80%);
     display: block;
 }
+
 .oculto2.mostrar2 {
     @include ventanitas($largoTarjeta, 64px, 72%);
     display: block;
 }
 
 @media (max-width:500px) {
-    body{
+    body {
         display: flex;
         flex-direction: column;
         width: 100%;
         flex-wrap: nowrap;
         justify-content: center;
     }
-    header{
+
+    header {
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;
-        nav{
+
+        .header__nav {
             display: none;
-        };
+        }
+
+        ;
+
+        .header__lista {
+            position: absolute;
+            z-index: 1;
+            left: 42%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            top: 40%;
+            font-size: 27px;
+            display: none;
+
+            li {
+                list-style: none;
+                margin-bottom: 20px;
+            }
+        }
+
+        .Register {
+            border: 1px solid black;
+            border-radius: 15px;
+            padding: 20px;
+            width: 19rem;
+            position: relative;
+            right: 142px;
+            text-align: center;
+        }
+
+        .Register:hover {
+            background-color: black;
+            color: #d5d5d5;
+        }
+
+        .items__feature {
+            cursor: pointer;
+        }
+
+        .items__company {
+            cursor: pointer;
+        }
     }
-    .hamburguesa{
+
+    .oculto {
+        display: none;
+        position: absolute;
+        left: 54%;
+        z-index: 1;
+        top: 7rem;
+        font-size: 30px;
+    }
+
+    .oculto2 {
+        display: none;
+        position: relative;
+        left: 8rem;
+        top: 10rem;
+        z-index: 1;
+        font-size: 25px;
+    }
+
+    .hamburguesa {
         display: block;
         position: absolute;
         left: 87%;
         top: 2%;
     }
-    main{
+
+    main {
         display: flex;
         flex-direction: column;
         text-align: center;
-        .mobile{
+
+        .mobile {
             display: block;
             width: -webkit-fill-available;
         }
-        .imagen{
+
+        .imagen {
             display: none;
         }
-        .principal{
+
+        .principal {
             display: flex;
             flex-direction: column;
             text-align: center;
             padding-left: 83px;
             width: 80%;
             
-            h1{
+            
+
+            h1 {
                 font-size: 30px;
                 margin-bottom: 15px;
                 display: flex;
                 justify-content: center;
             }
-            p{
+
+            p {
                 font-size: 18px;
                 margin-bottom: 40px;
                 width: 34rem;
@@ -185,12 +286,14 @@ main {
                 z-index: -1;
     
             }
-            .principal__btn{
+
+            .principal__btn {
                 width: 100%;
                 position: relative;
                 left: 5rem;
             }
-            .principal__footer{
+
+            .principal__footer {
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -201,39 +304,39 @@ main {
 
         }
     }
-    .ocultar__barra.barra{
+
+    .ocultar__barra.barra {
         position: absolute;
         background-color: #dedede;
         border-radius: 5px;
         border: 1px solid black;
         width: 90%;
-        height: 100%;
+        height: 90%;
         left: 10%;
         display: block;
-        img{
+        top: 0px;
+
+        img {
             display: flex;
             position: relative;
             left: 90%;
-            top: 7px;
+            top: 10px;
         }
-        ul{
+
+        ul {
             list-style: none;
             font-size: 30px;
+            left: 20px;
+            top: 60px;
+            position: relative;
         }
-        li{
+
+        li {
             margin-bottom: 10px;
         }
     }
-    .ocultar__barra{
+
+    .ocultar__barra {
         display: none;
     }
 }
-
-
-
-
-
-
-
-
-
